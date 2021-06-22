@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bus.DetailPage"
+             Title="Detail">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame>
+                <Label x:Name="Title" FontAttributes="Bold" FontSize="Medium" TextColor="Black" Padding="10" />
+            </Frame>
+            <Button x:Name="AddBtn" Text="Add stop to favorite" FontSize="Medium" Clicked="GotoAddOrUpdatePage"></Button>
+            <ListView x:Name="BusList" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label FontAttributes="Bold" FontSize="Medium" TextColor="Black" Text="{ Binding Title }" Padding="10" />
+                                <Label FontAttributes="Bold" FontSize="Medium" TextColor="Red" Text="{ Binding Next, StringFormat='{0} minutes' }" Padding="10" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

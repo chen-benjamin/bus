@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bus.AddOrUpdatePage"
+             Title="Edit Favorite">
+    <ContentPage.Content>
+        <RelativeLayout  Padding="10">
+            <StackLayout>
+
+                <Grid >
+                    <Label Grid.Row="0" Grid.Column="0" Text="Name" FontSize="Medium" TextColor="black" />
+                    <Entry Grid.Row="1" Grid.Column="0" x:Name="Name" Text="{Binding Name}"/>
+                    <Label Grid.Row="2" Grid.Column="0" x:Name="Title" FontSize="Medium" TextColor="black" />
+                    <Button Grid.Row="3" Grid.Column="0" BackgroundColor="LightGreen"  Text="Save" Clicked="SaveFavorite"/>
+                </Grid>
+
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

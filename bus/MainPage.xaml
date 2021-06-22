@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bus.MainPage"
+             Title="My TTC">
+
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="My TTC" FontSize="Large" TextColor="White"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <RelativeLayout>
+        <Image x:Name="poster" Source="https://ih1.redbubble.net/image.1072238744.2272/st,small,845x845-pad,1000x1000,f8f8f8.jpg" Aspect="AspectFill" 
+               RelativeLayout.WidthConstraint="{ ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1 }"
+               RelativeLayout.HeightConstraint="{ ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1 }"
+               />
+
+        <StackLayout VerticalOptions="Center" RelativeLayout.YConstraint="{ ConstraintExpression Type=RelativeToView, ElementName=poster, Property=Height, Factor=1 }">
+            <Grid Padding="10" RowSpacing="15" ColumnSpacing="0" >
+                <Button Grid.Row="0" Grid.Column="0" Text="Favorites" BackgroundColor="Red" FontAttributes="Bold" FontSize="Medium" Clicked="GoToFavoritesPage" />
+                <Button Grid.Row="1" Grid.Column="0" Text="Routes" BackgroundColor="LightGreen" FontAttributes="Bold" FontSize="Medium" Clicked="GoToRoutesPage" />
+            </Grid>
+        </StackLayout>
+    </RelativeLayout>
+
+</ContentPage>

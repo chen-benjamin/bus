@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bus.FavoritesPage"
+             Title="Favorites">
+    <ContentPage.Content>
+        <ListView x:Name="StopList" ItemTapped="GoToDetailPage" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontAttributes="Bold" FontSize="Medium" TextColor="Black" Text="{ Binding Name }" Padding="10" />
+                        </StackLayout>
+
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Update" IsDestructive="True"
+                                      CommandParameter="{Binding .}"
+                                      Clicked="GotoAddOrUpdatePage" />
+                            <MenuItem Text="Delete" IsDestructive="True"
+                                      CommandParameter="{Binding .}"
+                                      Clicked="DeleteFavorite" />
+                        </ViewCell.ContextActions>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
